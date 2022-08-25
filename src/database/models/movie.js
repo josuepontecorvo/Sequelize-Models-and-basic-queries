@@ -1,4 +1,5 @@
 'use strict';
+const moment = require('moment');
 const {
   Model
 } = require('sequelize');
@@ -17,13 +18,20 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     rating: DataTypes.FLOAT,
     awards: DataTypes.INTEGER,
-    release_date: DataTypes.DATE,
+    release_date: {
+      type: DataTypes.DATE,
+      get() {
+        return moment(this.getDataValue('release_date')).format('YYYY-MM-DD');
+    }
+    },
     length: DataTypes.INTEGER,
     genre_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Movie',
-    timestamps: false,
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
   });
   return Movie;
 };

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/css/style.css' />
+    <title>Movie edit form</title>
+</head>
+<body>
+    <figure>
+        <a href="/"><img src="/img/logo-DH.png" alt="Logo Digital House"></a>
+    </figure>
+    <br>
+    <h1>Edit Movie</h1>
+    <form action="/movies/update/<%= movie.id %>?_method=put" method="post">
+        <div class="form-control">
+            <label for="title">Title
+                <input type="text" name="title" id="title" value="<%= movie.title %>">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="rating">Rating
+                <input type="number" step="any" name="rating" id="rating" value="<%= movie.rating %>">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="awards">Awards
+                <input type="number" name="awards" id="awards" value="<%= movie.awards %>">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="release_date">Release date
+                <input type="date" name="release_date" id="release_date" value="<%= movie.release_date %>">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="length">Length
+                <input type="number" name="length" id="length" value="<%= movie.length %>">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="genre_id">Genre id
+                <input type="number" name="genre_id" id="genre_id" value="<%= movie.genre_id %>">
+            </label>
+        </div>
+        <button type="submit">Editar</button>
+    </form>
+    
+</body>
+</html>

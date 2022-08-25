@@ -19,7 +19,13 @@
     <% if ( movie.length ) { %>
         <p><strong>DURACIÓN:</strong> <%= movie.length + ' minutos'%> </p><br>     
     <% } %>
-    <p><strong>FECHA DE ESTRENO:</strong> <%= movie.release_date %> </p>
+    <p><strong>FECHA DE ESTRENO:</strong> <%= movie.release_date %> </p><br>
+    <form action="/movies/edit/<%= movie.id  %>" method="get">
+    <button type="submit">Edit</button>
+    </form><br>
+    <form action="/movies/delete/<%= movie.id  %>?_method=DELETE" method="POST">
+    <button type="submit">Delete</button>
+    </form>
 
 </body>
 </html>

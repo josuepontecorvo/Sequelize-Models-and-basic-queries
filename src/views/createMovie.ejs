@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie create form</title>
+</head>
+<body>
+    <h1>Add Movie</h1>
+    <form action="/movies/create" method="post">
+        <div class="form-control">
+            <label for="title">Title
+                <input type="text" name="title" id="title">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="rating">Rating
+                <input type="number" step="any" name="rating" id="rating">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="awards">Awards
+                <input type="number" name="awards" id="awards">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="release_date">Release date
+                <input type="date" name="release_date" id="release_date">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="length">Length
+                <input type="number" name="length" id="length">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="genre_id">Genre id
+                <input type="number" name="genre_id" id="genre_id">
+            </label>
+        </div>
+        <button type="submit">Crear</button>
+    </form>
+    
+</body>
+</html>
